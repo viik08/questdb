@@ -20,6 +20,7 @@ ON_GITHUB_ACTIONS = bool(os.environ.get('GITHUB_ACTIONS'))
 
 
 def export_ci_var(name, value):
+    
     sys.stderr.write(f'>>> export {name}="{value}"\n')
     if ON_GITHUB_ACTIONS:
         with open(os.environ['GITHUB_ENV'], 'a') as env_file:
